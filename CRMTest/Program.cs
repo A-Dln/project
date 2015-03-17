@@ -15,6 +15,7 @@ namespace CRMTest
         {
             //iets toegevoegd om fetch en pull te testen
             //nog een toevoeging
+            //en nog eentje om te testen...
             using (var context = new CRMContext())
             {
                 Categorie categorie = new Categorie { Code = "JJJ", Omschrijving = "Blabla" };
