@@ -28,7 +28,7 @@
                     <Label Content="Code"/>
                     <Label Content="Omschrijving"/>
                 </StackPanel>
-                <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" KeyDown="StackPanel_KeyDown">
                     <TextBox Name="textBoxCode" TextWrapping="Wrap" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Code}" IsReadOnly="True" />
                     <TextBox Name="textBoxOmschrijving" TextWrapping="Wrap" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Omschrijving}" IsReadOnly="True"/>
                     <Button Name="buttonOpslaan" Content="Opslaan" Visibility="Hidden" Click="buttonOpslaan_Click" />

@@ -154,5 +154,13 @@ namespace CRMWpf
         {
             context.Dispose();
         }
+
+        private void StackPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                buttonOpslaan_Click(sender, e);
+            }
+        }
     }
 }
