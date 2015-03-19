@@ -1,0 +1,49 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:CRMGemeenschap="clr-namespace:CRMGemeenschap;assembly=CRMGemeenschap" mc:Ignorable="d" x:Class="CRMWpf.BeheerProducten"
+        Title="Beheer Producten" Height="325" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>    
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="BasisStijl.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ProductStijl.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Label Name="labelFeedback" DockPanel.Dock="Bottom" Style="{StaticResource Feedback}"></Label>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="textBoxZoeken"></TextBox>
+                <Button Click="ZoekButton_Click">
+                    <Button.Content>
+                        <Image Source="images/magnifying-glass32.png" Width="20"></Image>
+                    </Button.Content>
+                </Button>
+                <Label Content="/"></Label>
+                <Button Content="Alles" Click="AllesButton_Click"></Button>
+            </StackPanel>
+            <ListBox Name="listBoxProducten" DisplayMemberPath="Omschrijving"></ListBox>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="ID"></Label>
+                    <Label Content="Omschrijving"></Label>
+                    <Label Content="Prijs"></Label>
+                    <Label Content="Eenheid"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Style="{StaticResource Productweergave}">
+                    <Label Name="labelId" Content="{Binding ElementName=listBoxProducten, Path=SelectedItem.Id}" />
+                    <Label Name="labelOmschrijving" Content="{Binding ElementName=listBoxProducten, Path=SelectedItem.Omschrijving}" />
+                    <Label Name="labelPrijs" Content="{Binding ElementName=listBoxProducten, Path=SelectedItem.PrijsPerEenheid}" />
+                    <Label Name="labelEenheid" Content="{Binding ElementName=listBoxProducten, Path=SelectedItem.Eenheid}" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="Wijzigen" Click="buttonWijzigen_Click" />
+                    <Button Name="buttonVerwijderen" Content="Verwijderen" Click="buttonVerwijderen_Click" />
+                </StackPanel>
+            </StackPanel>
+            <Button Content="Toevoegen" Click="buttonToevoegen_Click"></Button>
+        </StackPanel>
+    </DockPanel>   
+</Window>

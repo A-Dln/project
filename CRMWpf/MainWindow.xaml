@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <Button Content="Beheer categorieën" Click="Button_Click"/>
-
+        <Button Content="Beheer categorieën" Width="150" Margin="5" Click="CategorieenButton_Click" />
+        <Button Content="Beheer producten" Width="150" Margin="5" Click="ProductenButton_Click" />
     </StackPanel>
 </Window>

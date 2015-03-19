@@ -4,13 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:CRMGemeenschap="clr-namespace:CRMGemeenschap;assembly=CRMGemeenschap" mc:Ignorable="d" x:Class="CRMWpf.BeheerCategorieen"
         Title="Beheer Categorieën" Height="300" Width="250" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.Resources>
-        <ResourceDictionary Source="CategorieStijl.xaml"></ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="BasisStijl.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="CategorieStijl.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <DockPanel LastChildFill="True">
         <Label Name="labelFeedBack" DockPanel.Dock="Bottom" Style="{StaticResource Feedback}" />
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <ListBox Name="listBoxCategorieen" SelectionChanged="listBoxCategorieen_SelectionChanged">
+                <ListBox Name="listBoxCategorieen" SelectionChanged="listBoxCategorieen_SelectionChanged" IsEnabled="True">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Path=Code}"/>
@@ -29,8 +34,8 @@
                     <Label Content="Omschrijving"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" KeyDown="StackPanel_KeyDown">
-                    <TextBox Name="textBoxCode" TextWrapping="Wrap" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Code}" IsReadOnly="True" />
-                    <TextBox Name="textBoxOmschrijving" TextWrapping="Wrap" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Omschrijving}" IsReadOnly="True"/>
+                    <TextBox Name="textBoxCode" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Code}" IsReadOnly="True" />
+                    <TextBox Name="textBoxOmschrijving" Text="{Binding ElementName=listBoxCategorieen, Path=SelectedItem.Omschrijving}" IsReadOnly="True"/>
                     <Button Name="buttonOpslaan" Content="Opslaan" Visibility="Hidden" Click="buttonOpslaan_Click" />
                 </StackPanel>
             </StackPanel>

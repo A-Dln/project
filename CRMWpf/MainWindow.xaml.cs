@@ -25,10 +25,16 @@ namespace CRMWpf
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CategorieenButton_Click(object sender, RoutedEventArgs e)
         {
             BeheerCategorieen beheerCategorieen = new BeheerCategorieen();
             beheerCategorieen.Show();
+        }
+
+        private void ProductenButton_Click(object sender, RoutedEventArgs e)
+        {
+            BeheerProducten beheerProducten = new BeheerProducten();
+            beheerProducten.Show();
         }
     }
 }

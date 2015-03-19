@@ -136,6 +136,7 @@ namespace CRMWpf
         {
             buttonWijzigen.IsEnabled = !buttonWijzigen.IsEnabled;
             buttonVerwijderen.IsEnabled = !buttonVerwijderen.IsEnabled;
+            listBoxCategorieen.IsEnabled = !listBoxCategorieen.IsEnabled;
             textBoxCode.IsReadOnly = !textBoxCode.IsReadOnly;
             textBoxOmschrijving.IsReadOnly = !textBoxOmschrijving.IsReadOnly;
             if (buttonOpslaan.Visibility == System.Windows.Visibility.Hidden)
